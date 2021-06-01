@@ -1,8 +1,7 @@
 import { scaleBand } from "d3-scale"
-import { decades, svgWidth } from "./constants"
+import { decades } from "./constants/circle"
+import { svgWidth } from "./constants/svg"
 
-let circleScale = scaleBand()
+export const circleScale = scaleBand()
   .domain(decades.map(String))
   .range([0, svgWidth / 2])
-
-export { circleScale }
