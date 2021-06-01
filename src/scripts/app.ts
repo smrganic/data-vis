@@ -9,6 +9,7 @@ import {
 } from "./constants/circle"
 
 import { circleScale } from "./scaleFunctions"
+
 import "../styles/styles.scss"
 
 // Dynamically create an svg element and append it to the container
