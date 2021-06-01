@@ -17,6 +17,11 @@ const svg = svgContainer
 
 const circleDates = svg.append("g").attr("id", "circleDates")
 
+let circleScale = scaleBand()
+  .domain(decades.map(String))
+  .range([0, svgWidth / 2])
+
+//@ts-ignore
 circleDates
   .selectAll("circle")
   .data(decades)
@@ -24,9 +29,7 @@ circleDates
   .append("circle")
   .attr("cx", svgWidth / 2)
   .attr("cy", svgHeight / 2)
-  .attr("r", (data) => {
-    return scaleBand().domain(decades.map(String)).range([0, svgHeight])
-  })
+  .attr("r", (data) => circleScale(data.toString()))
   .style("fill", "none")
   .style("stroke", "gray")
   .style("stroke-width", "1")
