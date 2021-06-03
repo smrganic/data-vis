@@ -49,3 +49,7 @@ circleDates
   .style("opacity", yearTextOpacity)
   .style("font-size", yearFontSize)
   .style("pointer-events", "none")
+
+const testJson = require("../../public/data/test.json")
+
+console.log(testJson)
