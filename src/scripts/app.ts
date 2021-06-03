@@ -6,8 +6,6 @@ import {
   textMargin,
   yearFontSize,
   yearTextOpacity,
-  imageHeight,
-  imageWidth,
 } from "./constants/circle"
 
 import { circleScale } from "./scaleFunctions"
@@ -52,6 +50,8 @@ circleDates
   .style("font-size", yearFontSize)
   .style("pointer-events", "none")
 
+import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
+// Append a div that holds the performer image and extraInfo paragraph
 svgContainer
   .append("div")
   .attr("id", "performersImage")
@@ -70,3 +70,14 @@ svgContainer
   .append("p")
   .attr("id", "extraInfo")
   .text("testing")
+
+const centerText = svg.append("g").attr("id", "centerText")
+centerText
+  .append("text")
+  .attr("x", svgWidth / 2)
+  .attr("y", svgHeight / 2)
+  .style("font-size", titleFontSize)
+  .style("dominant-baseline", "middle")
+  .style("text-anchor", "middle")
+  .style("fill", colorMain)
+  .text("testing position")
