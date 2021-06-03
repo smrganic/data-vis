@@ -6,6 +6,8 @@ import {
   textMargin,
   yearFontSize,
   yearTextOpacity,
+  imageHeight,
+  imageWidth,
 } from "./constants/circle"
 
 import { circleScale } from "./scaleFunctions"
@@ -50,6 +52,21 @@ circleDates
   .style("font-size", yearFontSize)
   .style("pointer-events", "none")
 
-const testJson = require("../../public/data/eurovisionData.json")
-
-console.log(testJson)
+svgContainer
+  .append("div")
+  .attr("id", "performersImage")
+  .style("width", `${imageWidth}px`)
+  .style("height", `${imageHeight}px`)
+  .style("border-radius", "50%")
+  .style("background-size", "cover")
+  .style("background-position", "center center")
+  .style(
+    "background-image",
+    `url(https://github.com/smrganic/data-vis/blob/feature/dataset/public/images/performers/1956_LysAssia-min.jpg?raw=true)`
+  )
+  .style("position", "absolute")
+  .style("top", `${svgHeight / 2 - imageHeight / 2}px`)
+  .style("left", `${svgWidth / 2 - imageWidth / 2}px`)
+  .append("p")
+  .attr("id", "extraInfo")
+  .text("testing")
