@@ -50,6 +50,6 @@ circleDates
   .style("font-size", yearFontSize)
   .style("pointer-events", "none")
 
-const testJson = require("../../public/data/test.json")
+const testJson = require("../../public/data/eurovisionData.json")
 
 console.log(testJson)
