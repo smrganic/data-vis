@@ -8,9 +8,11 @@ import {
   yearTextOpacity,
 } from "./constants/circle"
 
-import { circleScale } from "./scaleFunctions"
+import { circleScale, xScale } from "./scaleFunctions"
 
 import "../styles/styles.scss"
+
+const data = require("../../public/data/eurovisionData.json")
 
 // Dynamically create an svg element and append it to the container
 const svg = svgContainer
@@ -19,8 +21,39 @@ const svg = svgContainer
   .attr("width", svgWidth)
   .attr("height", svgHeight)
 
+import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
+import { arc } from "d3-shape"
+import { select } from "d3-selection"
+// Append a div that holds the performer image and extraInfo paragraph
+svgContainer
+  .append("div")
+  .attr("id", "performersImage")
+  .style("width", `${imageWidth}px`)
+  .style("height", `${imageHeight}px`)
+  .style("border-radius", "50%")
+  .style("background-size", "cover")
+  .style("background-position", "center center")
+  .style("position", "absolute")
+  .style("top", `${svgHeight / 2 - imageHeight / 2}px`)
+  .style("left", `${svgWidth / 2 - imageWidth / 2}px`)
+  .append("p")
+  .attr("id", "extraInfo")
+
+// Add elements that will hold the center text when there is no image
+const centerText = svg.append("g").attr("id", "centerText")
+centerText
+  .append("text")
+  .attr("x", svgWidth / 2)
+  .attr("y", svgHeight / 2)
+  .style("font-size", titleFontSize)
+  .style("dominant-baseline", "middle")
+  .style("text-anchor", "middle")
+  .style("fill", colorMain)
+
+const chartElements = svg.append("g").attr("id", "chartElements")
+
 // Create a group for the year circles and create them
-const circleDates = svg.append("g").attr("id", "circleDates")
+const circleDates = chartElements.append("g").attr("id", "circleDates")
 circleDates
   .selectAll("circle")
   .data(decades)
@@ -49,3 +82,45 @@ circleDates
   .style("opacity", yearTextOpacity)
   .style("font-size", yearFontSize)
   .style("pointer-events", "none")
+
+const performerInfoGroup = chartElements
+  .append("g")
+  .attr("id", "performerInfoGroup")
+
+performerInfoGroup
+  .selectAll("g")
+  .data(data)
+  .enter()
+  .append("g")
+  .attr("class", "performerInfo")
+  .attr("opacity", 0.8)
+  .attr("transform", (dataElement: any) => {
+    const angleToRotate =
+      ((xScale(dataElement.id)! + xScale.bandwidth() / 2) * 180) / Math.PI - 90
+    return `rotate(${angleToRotate})`
+  })
+  .attr("text-anchor", (dataElement: any) => {
+    return (xScale(dataElement.id)! + xScale.bandwidth() / 2 + Math.PI) %
+      (2 * Math.PI) <
+      Math.PI
+      ? "end"
+      : "start"
+  })
+  .each(function (dataElement: any) {
+    const element = select(this)
+
+    element
+      .append("text")
+      .attr("text-id", (dataElement: any) => dataElement.id)
+      .attr("x", (dataElement: any) =>
+        (xScale(dataElement.id)! + xScale.bandwidth() / 2 + Math.PI) %
+          (2 * Math.PI) <
+        Math.PI
+          ? circleScale(dataElement["year"])! - 10
+          : circleScale(dataElement["year"])! + 10
+      )
+      .attr("y", 0)
+      .text((dataElement: any) => `${dataElement.performers}`)
+      .style("font-size", "12px")
+      .style("dominant-baseline", "middle")
+  })
