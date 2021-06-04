@@ -9,6 +9,7 @@
     "performers": "Lys Assia",
     "language": "French",
     "points": null,
+    "imageLink": "1956_LysAssia-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=IyqIPvOkiRk"
   },
   {
@@ -21,6 +22,7 @@
     "performers": "Corry Brokken",
     "language": "Dutch",
     "points": 31,
+    "imageLink": "1957_CorryBrokken-min.png",
     "songLink": "https://www.youtube.com/watch?v=iWUOHzMjTZw"
   },
   {
@@ -33,6 +35,7 @@
     "performers": "André Claveau",
     "language": "French",
     "points": 27,
+    "imageLink": "1958_AndreClaveau-min.png",
     "songLink": "https://www.youtube.com/watch?v=IRFx_hYx4I8"
   },
   {
@@ -45,6 +48,7 @@
     "performers": "Teddy Scholten",
     "language": "Dutch",
     "points": 21,
+    "imageLink": "1959_TeddyScholten-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=DG12m8uF8nc"
   },
   {
@@ -57,6 +61,7 @@
     "performers": "Jacqueline Boyer",
     "language": "French",
     "points": 32,
+    "imageLink": "1960_JacquelineBoyer-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=WKBbF387zTY"
   },
   {
@@ -69,6 +74,7 @@
     "performers": "Jean-Claude Pascal",
     "language": "French",
     "points": 31,
+    "imageLink": "1961_JeanClaudePascal-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=g5ZDbEBt3iY"
   },
   {
@@ -81,6 +87,7 @@
     "performers": "Isabelle Aubret",
     "language": "French",
     "points": 26,
+    "imageLink": "1962_IsabelleAubret-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=Zk-ZiIwamHY"
   },
   {
@@ -93,6 +100,7 @@
     "performers": "Grethe and Jørgen Ingmann",
     "language": "Danish",
     "points": 42,
+    "imageLink": "1963_J%C3%B8rgen%26GretheIngmann-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=AYyhJvRE3mQ"
   },
   {
@@ -101,10 +109,11 @@
     "hostCity": "Copenhagen",
     "date": "21.3.",
     "winner": "Italy",
-    "song": "Non ho l'età",
+    "song": "Non ho letà",
     "performers": "Gigliola Cinquetti",
     "language": "Italian",
     "points": 49,
+    "imageLink": "1964_GigliolaCinquetti-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=Utd9cHBPfRA"
   },
   {
@@ -117,6 +126,7 @@
     "performers": "France Gall",
     "language": "French",
     "points": 32,
+    "imageLink": "1965_FranceGall-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=-d2mnuhJahU"
   },
   {
@@ -129,6 +139,7 @@
     "performers": "Udo Jürgens",
     "language": "German",
     "points": 31,
+    "imageLink": "1966_UdoJurgens-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=frtCOHgMvc8"
   },
   {
@@ -141,6 +152,7 @@
     "performers": "Sandie Shaw",
     "language": "English",
     "points": 47,
+    "imageLink": "1967_SandieShaw-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=4xnzPnyyWbY"
   },
   {
@@ -153,6 +165,7 @@
     "performers": "Massiel",
     "language": "Spanish",
     "points": 29,
+    "imageLink": "1968_Massiel-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=J4g5QYJOFzQ"
   },
   {
@@ -165,7 +178,47 @@
     "performers": "Frida Boccara",
     "language": "French",
     "points": 18,
+    "imageLink": "1969_FridaBoccara-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=vG57O5kFkv8"
+  },
+  {
+    "id": 15,
+    "year": 1969,
+    "hostCity": "Madrid",
+    "date": "29.3.",
+    "winner": "Netherlands",
+    "song": "De troubadour",
+    "performers": "Lenny Kuhr",
+    "language": "Dutch",
+    "points": 18,
+    "imageLink": "1969_LennyKuhr-min.jpg",
+    "songLink": "https://www.youtube.com/watch?v=FasfUSRdoYc"
+  },
+  {
+    "id": 16,
+    "year": 1969,
+    "hostCity": "Madrid",
+    "date": "29.3.",
+    "winner": "Spain",
+    "song": "Vivo cantando",
+    "performers": "Salomé",
+    "language": "Spanish",
+    "points": 18,
+    "imageLink": "1969_Salome-min.jpg",
+    "songLink": "https://www.youtube.com/watch?v=_-PVtGc59CI"
+  },
+  {
+    "id": 17,
+    "year": 1969,
+    "hostCity": "Madrid",
+    "date": "29.3.",
+    "winner": "United Kingdom",
+    "song": "Boom Bang-a-Bang",
+    "performers": "Lulu",
+    "language": "English",
+    "points": 18,
+    "imageLink": "1969_Lulu-min.jpg",
+    "songLink": "https://www.youtube.com/watch?v=4ew43u2gS0Y"
   },
   {
     "id": 18,
@@ -177,6 +230,7 @@
     "performers": "Dana",
     "language": "English",
     "points": 32,
+    "imageLink": "1970_Dana-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=ka5OfjwB3nM"
   },
   {
@@ -189,6 +243,7 @@
     "performers": "Séverine",
     "language": "French",
     "points": 128,
+    "imageLink": "1971_Severine-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=W1tSXCssXcQ"
   },
   {
@@ -201,6 +256,7 @@
     "performers": "Vicky Leandros",
     "language": "French",
     "points": 128,
+    "imageLink": "1972_VickyLeandros-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=xTPVYktRl-I"
   },
   {
@@ -213,6 +269,7 @@
     "performers": "Anne-Marie David",
     "language": "French",
     "points": 129,
+    "imageLink": "1973_AnneMarieDavid-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=eCMMDAFgsE4"
   },
   {
@@ -225,6 +282,7 @@
     "performers": "ABBA",
     "language": "English",
     "points": 24,
+    "imageLink": "1974_ABBA-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=3FsVeMz1F5c"
   },
   {
@@ -237,6 +295,7 @@
     "performers": "Teach-In",
     "language": "English",
     "points": 152,
+    "imageLink": "1975_TeachIn-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=L7BqyNx-04U"
   },
   {
@@ -249,6 +308,7 @@
     "performers": "Brotherhood of Man",
     "language": "English",
     "points": 164,
+    "imageLink": "1976_BrotherhoodofMan-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=fhq_Q1Ut8SQ"
   },
   {
@@ -257,10 +317,11 @@
     "hostCity": "London",
     "date": "7.5.",
     "winner": "France",
-    "song": "L'oiseau et l'enfant",
+    "song": "Loiseau et lenfant",
     "performers": "Marie Myriam",
     "language": "French",
     "points": 136,
+    "imageLink": "1977_MarieMyriam-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=AF1FliHB7ao"
   },
   {
@@ -273,6 +334,7 @@
     "performers": "Izhar Cohen and the Alphabeta",
     "language": "Hebrew",
     "points": 157,
+    "imageLink": "1978_IzharCohenAndTheAlphabeta-min.png",
     "songLink": "https://www.youtube.com/watch?v=Q8IDx4Hmzho"
   },
   {
@@ -285,6 +347,7 @@
     "performers": "Milk and Honey",
     "language": "Hebrew",
     "points": 125,
+    "imageLink": "1979_MilkAndHoney-min.jpeg",
     "songLink": "https://www.youtube.com/watch?v=N9ICfqiPSdk"
   },
   {
@@ -293,10 +356,11 @@
     "hostCity": "The Hague",
     "date": "19.4.",
     "winner": "Ireland",
-    "song": "What's Another Year",
+    "song": "Whats Another Year",
     "performers": "Johnny Logan",
     "language": "English",
     "points": 143,
+    "imageLink": "1980_JohnnyLogan-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=BPOwTXWe-Yw"
   },
   {
@@ -309,6 +373,7 @@
     "performers": "Bucks Fizz",
     "language": "English",
     "points": 136,
+    "imageLink": "1981_BucksFizz-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=62SrA5hCmkE"
   },
   {
@@ -321,6 +386,7 @@
     "performers": "Nicole",
     "language": "German",
     "points": 161,
+    "imageLink": "1982_Nicole-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=JicTadLWGnE"
   },
   {
@@ -333,6 +399,7 @@
     "performers": "Corinne Hermès",
     "language": "French",
     "points": 142,
+    "imageLink": "1983_Corinne%20Hermes-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=Na18hSCM5QY"
   },
   {
@@ -345,6 +412,7 @@
     "performers": "Herreys",
     "language": "Swedish",
     "points": 145,
+    "imageLink": "1984_Herreys-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=oxRpno1JQU8"
   },
   {
@@ -357,6 +425,7 @@
     "performers": "Bobbysocks!",
     "language": "Norwegian",
     "points": 123,
+    "imageLink": "1985_Bobbysocks!-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=RuZY2G4lpsA"
   },
   {
@@ -365,10 +434,11 @@
     "hostCity": "Bergen",
     "date": "3.5.",
     "winner": "Belgium",
-    "song": "J'aime la vie",
+    "song": "Jaime la vie",
     "performers": "Sandra Kim",
     "language": "French",
     "points": 176,
+    "imageLink": "1986_SandraKim-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=mXCOp4bso9I"
   },
   {
@@ -381,6 +451,7 @@
     "performers": "Johnny Logan",
     "language": "English",
     "points": 172,
+    "imageLink": "1987_JohnnyLogan-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=M6RjdihLfiA"
   },
   {
@@ -393,6 +464,7 @@
     "performers": "Céline Dion",
     "language": "French",
     "points": 137,
+    "imageLink": "1988_CelineDion-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=8pEYw8PcBas"
   },
   {
@@ -405,6 +477,7 @@
     "performers": "Riva",
     "language": "Croatian",
     "points": 137,
+    "imageLink": "1989_EmilijaKokic-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=FcxeIpv1Gdk"
   },
   {
@@ -417,6 +490,7 @@
     "performers": "Toto Cutugno",
     "language": "Italian",
     "points": 149,
+    "imageLink": "1990_TotoCutugno-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=0b5whZydVZc"
   },
   {
@@ -429,6 +503,7 @@
     "performers": "Carola",
     "language": "Swedish",
     "points": 146,
+    "imageLink": "1991_CarolaHaggkvist-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=7wnS4nu-bOc"
   },
   {
@@ -441,6 +516,7 @@
     "performers": "Linda Martin",
     "language": "English",
     "points": 155,
+    "imageLink": "1992_LindaMartin-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=oTPtDFxQgn4"
   },
   {
@@ -453,6 +529,7 @@
     "performers": "Niamh Kavanagh",
     "language": "English",
     "points": 187,
+    "imageLink": "1993_NiamhKavanagh-min.png",
     "songLink": "https://www.youtube.com/watch?v=tN01W_Kjhig"
   },
   {
@@ -461,10 +538,11 @@
     "hostCity": "Dublin",
     "date": "30.4.",
     "winner": "Ireland",
-    "song": "Rock 'n' Roll Kids",
+    "song": "Rock n Roll Kids",
     "performers": "Paul Harrington and Charlie McGettigan",
     "language": "English",
     "points": 226,
+    "imageLink": "1994_PaulHarringtonAndCharlieMcGettigan-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=1x_9JnCGXFY"
   },
   {
@@ -477,6 +555,7 @@
     "performers": "Secret Garden",
     "language": "Norwegian",
     "points": 148,
+    "imageLink": "1995_SecretGarden-min.png",
     "songLink": "https://www.youtube.com/watch?v=NLR-fEmL3IY"
   },
   {
@@ -489,6 +568,7 @@
     "performers": "Eimear Quinn",
     "language": "English",
     "points": 162,
+    "imageLink": "1996_EimearQuinn.webp",
     "songLink": "https://www.youtube.com/watch?v=JPSZxPGv7dI"
   },
   {
@@ -501,6 +581,7 @@
     "performers": "Katrina and the Waves",
     "language": "English",
     "points": 227,
+    "imageLink": "1997_KatrinaAndTheWaves.webp",
     "songLink": "https://www.youtube.com/watch?v=106joSv-OSM"
   },
   {
@@ -513,6 +594,7 @@
     "performers": "Dana International",
     "language": "Hebrew",
     "points": 172,
+    "imageLink": "1998_DanaInternational-min.jpeg",
     "songLink": "https://www.youtube.com/watch?v=fZ5B6w-Baxs"
   },
   {
@@ -525,6 +607,7 @@
     "performers": "Charlotte Nilsson",
     "language": "English",
     "points": 163,
+    "imageLink": "1999_CharlotteNilsson-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=n2NU4H85J4o"
   },
   {
@@ -537,6 +620,7 @@
     "performers": "Olsen Brothers",
     "language": "English",
     "points": 195,
+    "imageLink": "2000_OlsenBrothers-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=1xROvbWV-nA"
   },
   {
@@ -549,6 +633,7 @@
     "performers": "Tanel Padar, Dave Benton and 2XL",
     "language": "English",
     "points": 198,
+    "imageLink": "2001_TanelPadarDaveBentonAnd2XL-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=wri72BfnGh4"
   },
   {
@@ -561,6 +646,7 @@
     "performers": "Marie N",
     "language": "English",
     "points": 176,
+    "imageLink": "2002_MarieN-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=DlKHYFxUC64"
   },
   {
@@ -573,6 +659,7 @@
     "performers": "Sertab Erener",
     "language": "English",
     "points": 167,
+    "imageLink": "2003_SertabErener-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=m3i4S4E7h3I"
   },
   {
@@ -585,6 +672,7 @@
     "performers": "Ruslana",
     "language": "English, Ukrainian",
     "points": 280,
+    "imageLink": "2004_Ruslana-min.png",
     "songLink": "https://www.youtube.com/watch?v=10XR67NQcAc"
   },
   {
@@ -597,6 +685,7 @@
     "performers": "Helena Paparizou",
     "language": "English",
     "points": 230,
+    "imageLink": "2005_HelenaPaparizou-min.png",
     "songLink": "https://www.youtube.com/watch?v=l4hB-NTaPjw"
   },
   {
@@ -609,6 +698,7 @@
     "performers": "Lordi",
     "language": "English",
     "points": 292,
+    "imageLink": "2006_Lordi-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=gAh9NRGNhUU"
   },
   {
@@ -621,6 +711,7 @@
     "performers": "Marija Šerifovi?",
     "language": "Serbian",
     "points": 268,
+    "imageLink": "2007_MarijaSerifovic-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=706QhD-kE48"
   },
   {
@@ -633,6 +724,7 @@
     "performers": "Dima Bilan",
     "language": "English",
     "points": 272,
+    "imageLink": "2008_DimaBilan-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=-72s4WzUcKI"
   },
   {
@@ -645,6 +737,7 @@
     "performers": "Alexander Rybak",
     "language": "English",
     "points": 387,
+    "imageLink": "2009_AlexanderRybak-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=uiH4BFTELME"
   },
   {
@@ -657,6 +750,7 @@
     "performers": "Lena",
     "language": "English",
     "points": 246,
+    "imageLink": "2010_LenaMeyerLandrut-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=IRgp-7Q4alU"
   },
   {
@@ -669,6 +763,7 @@
     "performers": "Ell and Nikki",
     "language": "English",
     "points": 221,
+    "imageLink": "2011_EllAndNikki-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=iq2yLykdjvA"
   },
   {
@@ -681,6 +776,7 @@
     "performers": "Loreen",
     "language": "English",
     "points": 372,
+    "imageLink": "2012_Loreen-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=Pfo-8z86x80"
   },
   {
@@ -693,6 +789,7 @@
     "performers": "Emmelie de Forest",
     "language": "English",
     "points": 281,
+    "imageLink": "2013_EmmelieDeForest-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=p3f9v8ebuD4"
   },
   {
@@ -705,6 +802,7 @@
     "performers": "Conchita Wurst",
     "language": "English",
     "points": 290,
+    "imageLink": "2014_ConchitaWurst-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=lnqyNXJFkQU"
   },
   {
@@ -717,6 +815,7 @@
     "performers": "Måns Zelmerlöw",
     "language": "English",
     "points": 365,
+    "imageLink": "2015_MansZelmerlow-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=5sGOwFVUU0I"
   },
   {
@@ -729,6 +828,7 @@
     "performers": "Jamala",
     "language": "English, Crimean Tatar",
     "points": 534,
+    "imageLink": "2016_Jamala-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=B-rnM-MwRHY"
   },
   {
@@ -741,6 +841,7 @@
     "performers": "Salvador Sobral",
     "language": "Portuguese",
     "points": 758,
+    "imageLink": "2017_SobralSalvador-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=Qotooj7ODCM"
   },
   {
@@ -753,6 +854,7 @@
     "performers": "Netta",
     "language": "English",
     "points": 529,
+    "imageLink": "2018_Netta-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=84LBjXaeKk4"
   },
   {
@@ -765,6 +867,7 @@
     "performers": "Duncan Laurence",
     "language": "English",
     "points": 498,
+    "imageLink": "2019_DuncanLaurence-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=R3D-r4ogr7s"
   },
   {
@@ -773,10 +876,11 @@
     "hostCity": "Contest cancelled due to the COVID-19 pandemic",
     "date": "",
     "winner": "",
-    "song": "No winner due to COVID-19",
+    "song": "",
     "performers": "",
     "language": "",
     "points": null,
+    "imageLink": "",
     "songLink": "https://www.youtube.com/watch?v=R_xmJcg1iBU"
   },
   {
@@ -789,6 +893,7 @@
     "performers": "Måneskin",
     "language": "Italian",
     "points": 524,
+    "imageLink": "2021_Maneskin-min.jpg",
     "songLink": "https://www.youtube.com/watch?v=RVH5dn1cxAQ"
   }
 ]

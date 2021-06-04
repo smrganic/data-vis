@@ -5,6 +5,7 @@ import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
 import { matcher, select } from "d3-selection"
 
 import "../styles/styles.scss"
+import { mouseTest, onMouseOver } from "./Interactions"
 
 const data = require("../../public/data/eurovisionData.json")
 
@@ -135,6 +136,7 @@ performerInfoGroup
           ? "rotate(180)"
           : "rotate(0)"
       )
+      .on("mouseover", onMouseOver)
 
     element
       .append("line")
