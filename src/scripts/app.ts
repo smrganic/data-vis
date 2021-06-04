@@ -119,8 +119,8 @@ performerInfoGroup
           Math.PI) %
           (2 * Math.PI) <
         Math.PI
-          ? -scales.yScale(dataElement.year)
-          : scales.yScale(dataElement.year)
+          ? -scales.yScale(dataElement.year) - performerConstants.Margin
+          : scales.yScale(dataElement.year) + performerConstants.Margin
       )
       .attr("y", 0)
       .text((dataElement: any) => `${dataElement.song}`)
