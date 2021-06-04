@@ -8,7 +8,12 @@ import {
   yearTextOpacity,
 } from "./constants/circle"
 
-import { circleScale, xScale } from "./scaleFunctions"
+import {
+  circleScale,
+  circleScaleLowerRange,
+  xScale,
+  yScale,
+} from "./scaleFunctions"
 
 import "../styles/styles.scss"
 
@@ -83,9 +88,17 @@ circleDates
   .style("font-size", yearFontSize)
   .style("pointer-events", "none")
 
+// Group for performer information this applys names and rotation
 const performerInfoGroup = chartElements
   .append("g")
   .attr("id", "performerInfoGroup")
+
+performerInfoGroup.attr(
+  "transform",
+  `translate(${svgWidth / 2}, ${svgHeight / 2})`
+)
+
+import { domain } from "./scaleFunctions"
 
 performerInfoGroup
   .selectAll("g")
@@ -116,11 +129,30 @@ performerInfoGroup
         (xScale(dataElement.id)! + xScale.bandwidth() / 2 + Math.PI) %
           (2 * Math.PI) <
         Math.PI
-          ? circleScale(dataElement["year"])! - 10
-          : circleScale(dataElement["year"])! + 10
+          ? `${-yScale(domain[1])}`
+          : `${yScale(domain[1])}`
       )
       .attr("y", 0)
+
       .text((dataElement: any) => `${dataElement.performers}`)
       .style("font-size", "12px")
       .style("dominant-baseline", "middle")
+
+    element
+      .append("line")
+      .attr("x1", circleScaleLowerRange)
+      .attr("x2", yScale(data[data.length - 1].year))
+      .attr("y1", 0)
+      .attr("y2", 0)
+      .style("stroke", "black")
+      .style("opacity", 0.7)
+      .style("stroke-width", 0.2)
+
+    element
+      .append("circle")
+      .attr("class", "winPoint")
+      .attr("cx", (dataElement: any) => yScale(dataElement.year))
+      .attr("cy", 0)
+      .attr("r", 3)
+      .style("fill", "black")
   })
