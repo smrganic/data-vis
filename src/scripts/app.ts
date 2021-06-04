@@ -3,6 +3,7 @@ import * as svgConstants from "./constants/svg"
 import * as scales from "./scaleFunctions"
 import * as centerDataConstants from "./constants/centerData"
 import { select } from "d3-selection"
+import "d3-transition"
 
 import "../styles/styles.scss"
 import { onMouseOut, onMouseOver } from "./Interactions"
@@ -40,10 +41,22 @@ svgConstants.Container.append("div")
 const centerText = svg.append("g").attr("id", "centerText")
 centerText
   .append("text")
+  .attr("id", "centerTextMain")
   .attr("x", svgConstants.Width / 2)
-  .attr("y", svgConstants.Height / 2)
+  .attr("y", svgConstants.Height / 2 - 10)
   .style("font-size", centerDataConstants.titleFontSize)
-  .text(centerDataConstants.text)
+  .text(centerDataConstants.textMain)
+  .style("dominant-baseline", "middle")
+  .style("text-anchor", "middle")
+  .style("fill", performerConstants.circle.Color)
+
+centerText
+  .append("text")
+  .attr("id", "centerTextDescription")
+  .attr("x", svgConstants.Width / 2)
+  .attr("y", svgConstants.Height / 2 + 20)
+  .style("font-size", centerDataConstants.titleFontSize)
+  .text(centerDataConstants.textDesription)
   .style("dominant-baseline", "middle")
   .style("text-anchor", "middle")
   .style("fill", performerConstants.circle.Color)
@@ -115,6 +128,7 @@ performerInfoGroup
       ? "end"
       : "start"
   })
+  .style("opacity", 0)
   .each(function (dataElement: any) {
     const element = select(this)
 
@@ -169,3 +183,7 @@ performerInfoGroup
       .attr("r", performerConstants.winPoint.Radius)
       .style("fill", performerConstants.winPoint.Fill)
   })
+  .transition()
+  .duration(1000)
+  .delay((_, i) => i * 25)
+  .style("opacity", 1)

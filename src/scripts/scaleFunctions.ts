@@ -5,7 +5,7 @@ import { Width } from "./constants/svg"
 const data = require("../../public/data/eurovisionData.json")
 
 export const circleScaleLowerRange = 120
-export const circleScaleUpperRange = Width / 2 - 120
+export const circleScaleUpperRange = Width / 2 - circleScaleLowerRange
 
 // 1950 - 2021
 export const domain = [Decades[0], data[data.length - 1].year]
