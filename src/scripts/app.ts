@@ -2,7 +2,7 @@ import * as performerConstants from "./constants/performerInfoGroup/performerGro
 import * as svgConstants from "./constants/svg"
 import * as scales from "./scaleFunctions"
 import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
-import { matcher, select } from "d3-selection"
+import { select } from "d3-selection"
 
 import "../styles/styles.scss"
 import { onMouseOut, onMouseOver } from "./Interactions"
@@ -51,7 +51,7 @@ circleDates
   .append("circle")
   .attr("cx", svgConstants.Width / 2)
   .attr("cy", svgConstants.Height / 2)
-  .attr("r", (dataElement) => scales.circleScale(dataElement.toString())!)
+  .attr("r", (dataElement) => scales.yScale(dataElement))
   .style("fill", "none")
   .style("stroke", performerConstants.circle.Color)
   .style("stroke-width", performerConstants.circle.StrokeWidth)
@@ -65,7 +65,7 @@ circleDates
     "x",
     (dataElement) =>
       svgConstants.Width / 2 +
-      scales.circleScale(dataElement.toString())! +
+      scales.yScale(dataElement) +
       performerConstants.circle.TextMargin
   )
   .attr("y", () => svgConstants.Height / 2)
