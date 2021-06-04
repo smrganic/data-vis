@@ -5,7 +5,7 @@ import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
 import { matcher, select } from "d3-selection"
 
 import "../styles/styles.scss"
-import { mouseTest, onMouseOver } from "./Interactions"
+import { onMouseOut, onMouseOver } from "./Interactions"
 
 const data = require("../../public/data/eurovisionData.json")
 
@@ -91,7 +91,6 @@ performerInfoGroup
   .enter()
   .append("g")
   .attr("class", "performerInfo")
-  .attr("opacity", performerConstants.Opacity)
   .attr("transform", (dataElement: any) => {
     const angleToRotate =
       ((scales.xScale(dataElement.id)! + scales.xScale.bandwidth() / 2) * 180) /
@@ -113,7 +112,7 @@ performerInfoGroup
 
     element
       .append("text")
-      .attr("text-id", (dataElement: any) => dataElement.id)
+      .attr("id", (dataElement: any) => `winner-${dataElement.id}-text`)
       .attr("x", (dataElement: any) =>
         (scales.xScale(dataElement.id)! +
           scales.xScale.bandwidth() / 2 +
@@ -137,11 +136,13 @@ performerInfoGroup
           : "rotate(0)"
       )
       .on("mouseover", onMouseOver)
+      .on("mouseout", onMouseOut)
 
     element
       .append("line")
+      .attr("id", (dataElement: any) => `winner-${dataElement.id}-line`)
       .attr("x1", scales.circleScaleLowerRange)
-      .attr("x2", scales.yScale(data[data.length - 1].year))
+      .attr("x2", scales.yScale(dataElement.year))
       .attr("y1", 0)
       .attr("y2", 0)
       .style("stroke", performerConstants.lines.Stroke)
@@ -150,6 +151,7 @@ performerInfoGroup
 
     element
       .append("circle")
+      .attr("id", (dataElement: any) => `winner-${dataElement.id}-circle`)
       .attr("class", "winPoint")
       .attr("cx", (dataElement: any) => scales.yScale(dataElement.year))
       .attr("cy", 0)
