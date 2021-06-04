@@ -1,17 +1,17 @@
 import { scaleBand, scaleLinear } from "d3-scale"
-import { decades } from "./constants/circle"
-import { svgWidth } from "./constants/svg"
+import { Decades } from "./constants/performerInfoGroup/circle"
+import { Width } from "./constants/svg"
 
 const data = require("../../public/data/eurovisionData.json")
 
 export const circleScaleLowerRange = 100
-export const circleScaleUpperRange = svgWidth / 2 - 100
+export const circleScaleUpperRange = Width / 2 - 100
 
 // 1950 - 2021
-export const domain = [decades[0], data[data.length - 1].year]
+export const domain = [Decades[0], data[data.length - 1].year]
 
 export const circleScale = scaleBand()
-  .domain(decades.map(String)) // For some reason scaleBand wants attay of Strings for domain
+  .domain(Decades.map(String)) // For some reason scaleBand wants array of Strings for domain
   .range([circleScaleLowerRange, circleScaleUpperRange])
 
 export const xScale = scaleBand()

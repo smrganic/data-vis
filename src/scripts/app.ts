@@ -1,37 +1,21 @@
-import { svgContainer, svgWidth, svgHeight } from "./constants/svg"
-
-import {
-  decades,
-  colorMain,
-  textMargin,
-  yearFontSize,
-  yearTextOpacity,
-} from "./constants/circle"
-
-import {
-  circleScale,
-  circleScaleLowerRange,
-  xScale,
-  yScale,
-} from "./scaleFunctions"
+import * as performerConstants from "./constants/performerInfoGroup/performerGroup"
+import * as svgConstants from "./constants/svg"
+import * as scales from "./scaleFunctions"
+import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
+import { select } from "d3-selection"
 
 import "../styles/styles.scss"
 
 const data = require("../../public/data/eurovisionData.json")
 
 // Dynamically create an svg element and append it to the container
-const svg = svgContainer
-  .append("svg")
+const svg = svgConstants.Container.append("svg")
   .attr("id", "svgChart")
-  .attr("width", svgWidth)
-  .attr("height", svgHeight)
+  .attr("width", svgConstants.Width)
+  .attr("height", svgConstants.Height)
 
-import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
-import { arc } from "d3-shape"
-import { select } from "d3-selection"
 // Append a div that holds the performer image and extraInfo paragraph
-svgContainer
-  .append("div")
+svgConstants.Container.append("div")
   .attr("id", "performersImage")
   .style("width", `${imageWidth}px`)
   .style("height", `${imageHeight}px`)
@@ -39,8 +23,8 @@ svgContainer
   .style("background-size", "cover")
   .style("background-position", "center center")
   .style("position", "absolute")
-  .style("top", `${svgHeight / 2 - imageHeight / 2}px`)
-  .style("left", `${svgWidth / 2 - imageWidth / 2}px`)
+  .style("top", `${svgConstants.Height / 2 - imageHeight / 2}px`)
+  .style("left", `${svgConstants.Width / 2 - imageWidth / 2}px`)
   .append("p")
   .attr("id", "extraInfo")
 
@@ -48,12 +32,12 @@ svgContainer
 const centerText = svg.append("g").attr("id", "centerText")
 centerText
   .append("text")
-  .attr("x", svgWidth / 2)
-  .attr("y", svgHeight / 2)
+  .attr("x", svgConstants.Width / 2)
+  .attr("y", svgConstants.Height / 2)
   .style("font-size", titleFontSize)
   .style("dominant-baseline", "middle")
   .style("text-anchor", "middle")
-  .style("fill", colorMain)
+  .style("fill", performerConstants.circle.Color)
 
 const chartElements = svg.append("g").attr("id", "chartElements")
 
@@ -61,32 +45,34 @@ const chartElements = svg.append("g").attr("id", "chartElements")
 const circleDates = chartElements.append("g").attr("id", "circleDates")
 circleDates
   .selectAll("circle")
-  .data(decades)
+  .data(performerConstants.circle.Decades)
   .enter()
   .append("circle")
-  .attr("cx", svgWidth / 2)
-  .attr("cy", svgHeight / 2)
-  .attr("r", (dataElement) => circleScale(dataElement.toString())!)
+  .attr("cx", svgConstants.Width / 2)
+  .attr("cy", svgConstants.Height / 2)
+  .attr("r", (dataElement) => scales.circleScale(dataElement.toString())!)
   .style("fill", "none")
-  .style("stroke", colorMain)
-  .style("stroke-width", "1")
+  .style("stroke", performerConstants.circle.Color)
+  .style("stroke-width", performerConstants.circle.StrokeWidth)
 
 // Add text to circles
 circleDates
   .selectAll("text")
-  .data(decades)
+  .data(performerConstants.circle.Decades)
   .join("text")
   .attr(
     "x",
     (dataElement) =>
-      svgWidth / 2 + circleScale(dataElement.toString())! + textMargin
+      svgConstants.Width / 2 +
+      scales.circleScale(dataElement.toString())! +
+      performerConstants.circle.TextMargin
   )
-  .attr("y", () => svgHeight / 2)
+  .attr("y", () => svgConstants.Height / 2)
   .text((dataElement) => dataElement)
-  .style("fill", colorMain)
-  .style("opacity", yearTextOpacity)
-  .style("font-size", yearFontSize)
-  .style("pointer-events", "none")
+  .style("fill", performerConstants.circle.Color)
+  .style("opacity", performerConstants.circle.YearTextOpacity)
+  .style("font-size", performerConstants.circle.YearFontSize)
+  .style("pointer-events", performerConstants.circle.PointerEvents)
 
 // Group for performer information this applys names and rotation
 const performerInfoGroup = chartElements
@@ -95,10 +81,8 @@ const performerInfoGroup = chartElements
 
 performerInfoGroup.attr(
   "transform",
-  `translate(${svgWidth / 2}, ${svgHeight / 2})`
+  `translate(${svgConstants.Width / 2}, ${svgConstants.Height / 2})`
 )
-
-import { domain } from "./scaleFunctions"
 
 performerInfoGroup
   .selectAll("g")
@@ -106,14 +90,18 @@ performerInfoGroup
   .enter()
   .append("g")
   .attr("class", "performerInfo")
-  .attr("opacity", 0.8)
+  .attr("opacity", performerConstants.Opacity)
   .attr("transform", (dataElement: any) => {
     const angleToRotate =
-      ((xScale(dataElement.id)! + xScale.bandwidth() / 2) * 180) / Math.PI - 90
+      ((scales.xScale(dataElement.id)! + scales.xScale.bandwidth() / 2) * 180) /
+        Math.PI -
+      90
     return `rotate(${angleToRotate})`
   })
   .attr("text-anchor", (dataElement: any) => {
-    return (xScale(dataElement.id)! + xScale.bandwidth() / 2 + Math.PI) %
+    return (scales.xScale(dataElement.id)! +
+      scales.xScale.bandwidth() / 2 +
+      Math.PI) %
       (2 * Math.PI) <
       Math.PI
       ? "end"
@@ -125,34 +113,27 @@ performerInfoGroup
     element
       .append("text")
       .attr("text-id", (dataElement: any) => dataElement.id)
-      .attr("x", (dataElement: any) =>
-        (xScale(dataElement.id)! + xScale.bandwidth() / 2 + Math.PI) %
-          (2 * Math.PI) <
-        Math.PI
-          ? `${-yScale(domain[1])}`
-          : `${yScale(domain[1])}`
-      )
+      .attr("x", (dataElement: any) => scales.yScale(dataElement.year))
       .attr("y", 0)
-
       .text((dataElement: any) => `${dataElement.performers}`)
       .style("font-size", "12px")
       .style("dominant-baseline", "middle")
 
     element
       .append("line")
-      .attr("x1", circleScaleLowerRange)
-      .attr("x2", yScale(data[data.length - 1].year))
+      .attr("x1", scales.circleScaleLowerRange)
+      .attr("x2", scales.yScale(data[data.length - 1].year))
       .attr("y1", 0)
       .attr("y2", 0)
-      .style("stroke", "black")
-      .style("opacity", 0.7)
-      .style("stroke-width", 0.2)
+      .style("stroke", performerConstants.lines.Stroke)
+      .style("opacity", performerConstants.lines.Opacity)
+      .style("stroke-width", performerConstants.lines.StrokeWidth)
 
     element
       .append("circle")
       .attr("class", "winPoint")
-      .attr("cx", (dataElement: any) => yScale(dataElement.year))
+      .attr("cx", (dataElement: any) => scales.yScale(dataElement.year))
       .attr("cy", 0)
-      .attr("r", 3)
-      .style("fill", "black")
+      .attr("r", performerConstants.winPoint.Radius)
+      .style("fill", performerConstants.winPoint.Fill)
   })
