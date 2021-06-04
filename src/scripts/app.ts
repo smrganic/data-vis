@@ -111,6 +111,9 @@ performerInfoGroup
     const element = select(this)
 
     element
+      .append("a")
+      .attr("target", "_blank")
+      .attr("href", (dataElement: any) => dataElement.songLink)
       .append("text")
       .attr("id", (dataElement: any) => `winner-${dataElement.id}-text`)
       .attr("x", (dataElement: any) =>

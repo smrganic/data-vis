@@ -9,7 +9,6 @@ export const circleScaleUpperRange = Width / 2 - 120
 
 // 1950 - 2021
 export const domain = [Decades[0], data[data.length - 1].year]
-console.log(domain)
 
 export const xScale = scaleBand()
   .range([Math.PI / 2 + 0.04, Math.PI / 2 + 2 * Math.PI - 0.1]) // This adds a small gap that is filled with year text
