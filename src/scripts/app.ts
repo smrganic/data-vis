@@ -1,7 +1,7 @@
 import * as performerConstants from "./constants/performerInfoGroup/performerGroup"
 import * as svgConstants from "./constants/svg"
 import * as scales from "./scaleFunctions"
-import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
+import * as centerDataConstants from "./constants/centerData"
 import { select } from "d3-selection"
 
 import "../styles/styles.scss"
@@ -18,14 +18,21 @@ const svg = svgConstants.Container.append("svg")
 // Append a div that holds the performer image and extraInfo paragraph
 svgConstants.Container.append("div")
   .attr("id", "performersImage")
-  .style("width", `${imageWidth}px`)
-  .style("height", `${imageHeight}px`)
+  .style("width", `${centerDataConstants.imageWidth}px`)
+  .style("height", `${centerDataConstants.imageHeight}px`)
+  .style("background", "transparent")
   .style("border-radius", "50%")
   .style("background-size", "cover")
   .style("background-position", "center center")
   .style("position", "absolute")
-  .style("top", `${svgConstants.Height / 2 - imageHeight / 2}px`)
-  .style("left", `${svgConstants.Width / 2 - imageWidth / 2}px`)
+  .style(
+    "top",
+    `${svgConstants.Height / 2 - centerDataConstants.imageHeight / 2}px`
+  )
+  .style(
+    "left",
+    `${svgConstants.Width / 2 - centerDataConstants.imageWidth / 2}px`
+  )
   .append("p")
   .attr("id", "extraInfo")
 
@@ -35,7 +42,8 @@ centerText
   .append("text")
   .attr("x", svgConstants.Width / 2)
   .attr("y", svgConstants.Height / 2)
-  .style("font-size", titleFontSize)
+  .style("font-size", centerDataConstants.titleFontSize)
+  .text(centerDataConstants.text)
   .style("dominant-baseline", "middle")
   .style("text-anchor", "middle")
   .style("fill", performerConstants.circle.Color)
