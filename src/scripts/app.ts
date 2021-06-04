@@ -2,7 +2,7 @@ import * as performerConstants from "./constants/performerInfoGroup/performerGro
 import * as svgConstants from "./constants/svg"
 import * as scales from "./scaleFunctions"
 import { imageWidth, imageHeight, titleFontSize } from "./constants/centerData"
-import { select } from "d3-selection"
+import { matcher, select } from "d3-selection"
 
 import "../styles/styles.scss"
 
@@ -113,11 +113,28 @@ performerInfoGroup
     element
       .append("text")
       .attr("text-id", (dataElement: any) => dataElement.id)
-      .attr("x", (dataElement: any) => scales.yScale(dataElement.year))
+      .attr("x", (dataElement: any) =>
+        (scales.xScale(dataElement.id)! +
+          scales.xScale.bandwidth() / 2 +
+          Math.PI) %
+          (2 * Math.PI) <
+        Math.PI
+          ? -scales.yScale(dataElement.year)
+          : scales.yScale(dataElement.year)
+      )
       .attr("y", 0)
-      .text((dataElement: any) => `${dataElement.performers}`)
+      .text((dataElement: any) => `${dataElement.song}`)
       .style("font-size", "12px")
       .style("dominant-baseline", "middle")
+      .attr("transform", (dataElement: any) =>
+        (scales.xScale(dataElement.id)! +
+          scales.xScale.bandwidth() / 2 +
+          Math.PI) %
+          (2 * Math.PI) <
+        Math.PI
+          ? "rotate(180)"
+          : "rotate(0)"
+      )
 
     element
       .append("line")
