@@ -1,4 +1,9 @@
 {
+  "name": "eurovision-winners",
+  "version": "1.0.0",
+  "engines": {
+    "node": "15.5.1"
+  },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev-server": "webpack serve --config webpack.dev.js"
