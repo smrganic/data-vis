@@ -11,29 +11,29 @@ const data = require("../../data/eurovisionData.json")
 
 export const renderSvg = () => {
   // Dynamically create an svg element and append it to the container
-  const svg = svgConstants.Container.append("svg")
+  const parentDiv = svgConstants.Container.append("div")
+    .attr("id", "parentDiv")
+    .attr("class", "flex-child")
+  const svg = parentDiv
+    .append("svg")
     .attr("id", "svgChart")
-    .attr("width", svgConstants.Width)
-    .attr("height", svgConstants.Height)
+    .attr("viewBox", "0 0 1000, 1000")
 
   // Append a div that holds the performer image and extraInfo paragraph
-  svgConstants.Container.append("div")
+  parentDiv
+    .append("div")
     .attr("id", "performersImage")
-    .style("width", `${centerDataConstants.imageWidth}px`)
-    .style("height", `${centerDataConstants.imageHeight}px`)
     .style("background", "transparent")
     .style("border-radius", "50%")
     .style("background-size", "cover")
     .style("background-position", "center center")
     .style("position", "absolute")
-    .style(
-      "top",
-      `${svgConstants.Height / 2 - centerDataConstants.imageHeight / 2}px`
-    )
-    .style(
-      "left",
-      `${svgConstants.Width / 2 - centerDataConstants.imageWidth / 2}px`
-    )
+    .style("width", "25.5%")
+    .style("height", "25.5%")
+    .style("top", "37%")
+    .style("bottom", 0)
+    .style("left", "37.1%")
+    .style("right", 0)
     .append("p")
     .attr("id", "extraInfo")
 
