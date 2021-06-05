@@ -13,14 +13,23 @@ body {
 
 body {
   background: #000000;
-  overflow: hidden;
 }
 
 .flex-div {
   height: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-child {
+  position: relative;
   flex: 1;
+}
+
+@media screen and(max-width: 500px) {
+  .flex-div {
+    flex-direction: column;
+  }
 }

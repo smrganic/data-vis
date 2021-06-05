@@ -16,12 +16,8 @@ export const onLinkClick = (data: any) => {
   select("#videoFrame")
     .attr("src", `${finalLink}`)
     .style("visibility", "visible")
-    .style("position", "relative")
     .style("width", "100%")
     .style("height", "100%")
-    .style("top", 0)
-    .style("left", 0)
-
   select("#close-btn")
     .style("visibility", "visible")
     .on("click", handleVideoClose)
