@@ -1,4 +1,4 @@
-import { circleScaleLowerRange } from "../scaleFunctions"
+import { circleScaleLowerRange } from "../functions/scaleFunctions"
 
 export const imageWidth = circleScaleLowerRange * 2 + 2
 export const imageHeight = circleScaleLowerRange * 2 + 2

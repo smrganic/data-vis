@@ -1,5 +1,5 @@
 import { select } from "d3-selection"
-import * as transitionValues from "./constants/transitions"
+import * as transitionValues from "../constants/transitions"
 import "d3-transition"
 
 export const onMouseOver = (data: any) => {
@@ -63,7 +63,7 @@ export const onMouseOut = () => {
 }
 
 const extractElementFromMouseEvent = (data: any) => {
-  const dataSet = require("../../public/data/eurovisionData.json")
+  const dataSet = require("../../data/eurovisionData.json")
   return dataSet.filter((element: any) => {
     const index = parseInt(data.target.id.split("-")[1])
     if (element.id === index) return element
