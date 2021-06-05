@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  font-family: Poppins;
+  font-weight: normal;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #000000;
+  overflow: hidden;
+}
+
+.flex-div {
+  height: 100%;
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+}
