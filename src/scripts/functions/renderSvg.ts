@@ -172,7 +172,7 @@ export const renderSvg = () => {
           .style("font-size", "12px")
           .style("dominant-baseline", "middle")
           .style("fill", centerDataConstants.textArtistColor)
-          .style("pointer", "cursor")
+          .style("cursor", "pointer")
           .attr("transform", (dataElement: any) =>
             (scales.xScale(dataElement.id)! +
               scales.xScale.bandwidth() / 2 +
