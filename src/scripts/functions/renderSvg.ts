@@ -14,6 +14,7 @@ export const renderSvg = () => {
   const parentDiv = svgConstants.Container.append("div")
     .attr("id", "parentDiv")
     .attr("class", "flex-child")
+    .style("min-height", "200px")
   const svg = parentDiv
     .append("svg")
     .attr("id", "svgChart")
