@@ -1,2 +1,2 @@
-export const Fill = "#000000"
+export const Fill = "#FFFFFF"
 export const Radius = 3

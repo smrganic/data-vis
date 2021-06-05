@@ -4,7 +4,7 @@ export const StrokeWidth = 1
 
 export const YearTextOpacity = 0.75
 export const YearFontSize = "11px"
-export const TextMargin = 7.5
+export const TextMargin = 4
 
 export const PointerEvents = "none"
 
