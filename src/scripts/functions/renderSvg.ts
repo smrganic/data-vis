@@ -4,7 +4,7 @@ import * as scales from "./scaleFunctions"
 import * as centerDataConstants from "../constants/centerData"
 import { select } from "d3-selection"
 import "d3-transition"
-import { onMouseOut, onMouseOver } from "./Interactions"
+import { onLinkClick, onMouseOut, onMouseOver } from "./Interactions"
 import { easeBackIn, easeBackOut } from "d3-ease"
 
 const data = require("../../data/eurovisionData.json")
@@ -134,7 +134,6 @@ export const renderSvg = () => {
             180) /
             Math.PI -
           90
-        console.log((scales.xScale.bandwidth() / 2) * 180)
         return `rotate(${angleToRotate})`
       })
       .attr("text-anchor", (dataElement: any) => {
@@ -154,8 +153,9 @@ export const renderSvg = () => {
 
         element
           .append("a")
-          .attr("target", "_blank")
-          .attr("href", (dataElement: any) => dataElement.songLink)
+          /*           .attr("target", "_blank")
+          .attr("href", (dataElement: any) => dataElement.songLink) */
+          .attr("id", (dataElement: any) => `winner-${dataElement.id}-link`)
           .append("text")
           .attr("id", (dataElement: any) => `winner-${dataElement.id}-text`)
           .attr("x", (dataElement: any) =>
@@ -171,6 +171,8 @@ export const renderSvg = () => {
           .text((dataElement: any) => `${dataElement.song}`)
           .style("font-size", "12px")
           .style("dominant-baseline", "middle")
+          .style("fill", centerDataConstants.textArtistColor)
+          .style("pointer", "cursor")
           .attr("transform", (dataElement: any) =>
             (scales.xScale(dataElement.id)! +
               scales.xScale.bandwidth() / 2 +
@@ -182,6 +184,7 @@ export const renderSvg = () => {
           )
           .on("mouseover", onMouseOver)
           .on("mouseout", onMouseOut)
+          .on("click", onLinkClick)
 
         element
           .append("line")

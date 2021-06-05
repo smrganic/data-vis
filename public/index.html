@@ -13,7 +13,26 @@
   </head>
 
   <body>
-    <div id="container"></div>
+    <div class="flex-div">
+      <div class="flex-child" id="container">
+        <button
+          id="close-btn"
+          style="position: absolute; top: 1%; left: 44%; visibility: hidden"
+        >
+          Close Video Player
+        </button>
+      </div>
+      <div class="flex-child" id="videoContainer">
+        <iframe
+          id="videoFrame"
+          style="visibility: hidden"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <script src="./dist/bundle.js"></script>
   </body>
 </html>

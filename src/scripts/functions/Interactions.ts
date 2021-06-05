@@ -1,12 +1,39 @@
 import { select } from "d3-selection"
 import * as transitionValues from "../constants/transitions"
+import * as lineConstants from "../constants/performerInfoGroup/lines"
 import "d3-transition"
+
+const linkBase =
+  "https://github.com/smrganic/data-vis/blob/dev/public/images/performers/"
+
+export const onLinkClick = (data: any) => {
+  const dataOrigin = extractElementFromMouseEvent(data)
+
+  const songLinkComponents = dataOrigin.songLink.split("v=")
+  const ytEmbedBase = "https://www.youtube.com/embed/"
+  const finalLink = ytEmbedBase + songLinkComponents[1] + "?autoplay=1"
+
+  select("#videoFrame")
+    .attr("src", `${finalLink}`)
+    .style("visibility", "visible")
+    .style("position", "relative")
+    .style("width", "100%")
+    .style("height", "100%")
+    .style("top", 0)
+    .style("left", 0)
+
+  select("#close-btn")
+    .style("visibility", "visible")
+    .on("click", handleVideoClose)
+}
+
+const handleVideoClose = () => {
+  select("#videoFrame").attr("src", "").style("visibility", "hidden")
+  select("#close-btn").style("visibility", "hidden")
+}
 
 export const onMouseOver = (data: any) => {
   const dataOrigin = extractElementFromMouseEvent(data)
-
-  const linkBase =
-    "https://github.com/smrganic/data-vis/blob/dev/public/images/performers/"
 
   const imageLink = `${dataOrigin.imageLink}?raw=true`
 
@@ -33,10 +60,9 @@ export const onMouseOver = (data: any) => {
     "opacity",
     transitionValues.OpacityMax
   )
-  select(`#winner-${selectedId}-line`).style(
-    "opacity",
-    transitionValues.OpacityMax
-  )
+  select(`#winner-${selectedId}-line`)
+    .style("opacity", transitionValues.OpacityMax)
+    .style("stroke-width", 1)
   select(`#winner-${selectedId}-circle`).style(
     "opacity",
     transitionValues.OpacityMax
@@ -57,6 +83,7 @@ export const onMouseOut = () => {
   select("#performerInfoGroup")
     .selectAll("line")
     .style("opacity", transitionValues.OpacityAfterValue)
+    .style("stroke-width", lineConstants.StrokeWidth)
   select("#performerInfoGroup")
     .selectAll("circle")
     .style("opacity", transitionValues.OpacityMax)
