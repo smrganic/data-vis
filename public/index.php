@@ -13,12 +13,12 @@
 <body>
   <div class="flex-div">
     <div class="flex-child" id="container">
-      <button id="close-btn" style="position: absolute; top: 1%; left: 44%; visibility: hidden">
-        Close Video Player
-      </button>
     </div>
     <div class="flex-child" id="videoContainer" style="height: 100%;">
       <iframe id="videoFrame" style="visibility: hidden" title="YouTube video player" frameborder="0" allow="autoplay; picture-in-picture" allowfullscreen></iframe>
+      <button id="close-btn" style="position: absolute; top: 10%; right: 5%; visibility: hidden">
+        Close Video Player
+      </button>
     </div>
   </div>
   <script src="./dist/bundle.js"></script>

@@ -31,5 +31,6 @@ body {
 @media screen and(max-width: 500px) {
   .flex-div {
     flex-direction: column;
+    display: block;
   }
 }
