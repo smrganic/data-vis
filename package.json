@@ -6,7 +6,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev-server": "webpack serve --config webpack.dev.js"
+    "dev-server": "webpack serve --config webpack.dev.js",
+    "build:dev": "webpack --config webpack.dev.js --watch"
   },
   "devDependencies": {
     "@types/d3": "^6.7.0",
