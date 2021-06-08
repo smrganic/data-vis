@@ -1,0 +1,19 @@
+@import "./chart/centerText.scss";
+@import "./chart/circle.scss";
+
+.winner-line {
+  stroke: $lineColor;
+  opacity: 0.7;
+  stroke-width: 1;
+}
+
+.winner-text {
+  font-size: $default;
+  dominant-baseline: middle;
+  fill: $artistColor;
+  cursor: pointer;
+}
+
+.winPoint-circle {
+  fill: $circleColor;
+}

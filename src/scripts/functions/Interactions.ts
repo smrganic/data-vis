@@ -1,6 +1,6 @@
 import { select } from "d3-selection"
 import * as transitionValues from "../constants/transitions"
-import * as lineConstants from "../constants/performerInfoGroup/lines"
+
 import "d3-transition"
 
 const linkBase =
@@ -79,7 +79,7 @@ export const onMouseOut = () => {
   select("#performerInfoGroup")
     .selectAll("line")
     .style("opacity", transitionValues.OpacityAfterValue)
-    .style("stroke-width", lineConstants.StrokeWidth)
+    .style("stroke-width", 1)
   select("#performerInfoGroup")
     .selectAll("circle")
     .style("opacity", transitionValues.OpacityMax)

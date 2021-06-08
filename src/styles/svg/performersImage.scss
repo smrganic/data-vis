@@ -1,0 +1,25 @@
+#performersImage {
+  background: transparent;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  width: 25.5%;
+  height: 25.5%;
+  top: 36.8%;
+  left: 37.1%;
+  bottom: 0;
+  right: 0;
+}
+
+#extraInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.85;
+  border-radius: 5px;
+  background: #f0f0f0;
+  padding: 0 5px;
+}

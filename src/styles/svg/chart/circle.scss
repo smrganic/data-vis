@@ -1,0 +1,12 @@
+circle {
+  fill: none;
+  stroke: $circleColor;
+  stroke-width: 1;
+}
+
+.circle-text {
+  fill: $circleTextColor;
+  opacity: 0;
+  font-size: $smallSize;
+  pointer-events: none;
+}
